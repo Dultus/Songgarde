@@ -7,7 +7,6 @@ using System.Net;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
-//using ImageMagick;
 using NAudio.Wave;
 using System.Runtime.InteropServices;
 using Encoder = System.Drawing.Imaging.Encoder;
@@ -17,7 +16,7 @@ using PaintDotNet;
 using DdsFileTypePlus;
 using System.IO.Compression;
 
-namespace GUI_STAM_C
+namespace SONGGARDE
 {
     public partial class FRM_Main : Form
     {

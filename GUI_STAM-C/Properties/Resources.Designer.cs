@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI_STAM_C.Properties {
+namespace SONGGARDE.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GUI_STAM_C.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GUI_STAM_C.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SONGGARDE.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,16 +57,6 @@ namespace GUI_STAM_C.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DultusReview {
-            get {
-                object obj = ResourceManager.GetObject("DultusReview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -93,9 +83,9 @@ namespace GUI_STAM_C.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap STAM_C {
+        internal static System.Drawing.Bitmap SONGGARDE {
             get {
-                object obj = ResourceManager.GetObject("STAM-C", resourceCulture);
+                object obj = ResourceManager.GetObject("SONGGARDE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +93,9 @@ namespace GUI_STAM_C.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap STAM_CWUmr {
+        internal static System.Drawing.Bitmap SONGGARDE_Image_Schwung {
             get {
-                object obj = ResourceManager.GetObject("STAM_CWUmr", resourceCulture);
+                object obj = ResourceManager.GetObject("SONGGARDE_Image_Schwung", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +103,9 @@ namespace GUI_STAM_C.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap STAMC_GUI_Image_Schwung {
+        internal static System.Drawing.Bitmap SONGGARDE_Image_SchwungOben {
             get {
-                object obj = ResourceManager.GetObject("STAMC GUI Image Schwung", resourceCulture);
+                object obj = ResourceManager.GetObject("SONGGARDE_Image_SchwungOben", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +113,9 @@ namespace GUI_STAM_C.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap STAMC_GUI_Image_SchwungOben {
+        internal static System.Drawing.Bitmap SONGGARDE_Image_SchwungObenLang {
             get {
-                object obj = ResourceManager.GetObject("STAMC GUI Image SchwungOben", resourceCulture);
+                object obj = ResourceManager.GetObject("SONGGARDE_Image_SchwungObenLang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +123,9 @@ namespace GUI_STAM_C.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap STAMC_GUI_Image_SchwungObenLang {
+        internal static System.Drawing.Bitmap SONGGARDEWUmr {
             get {
-                object obj = ResourceManager.GetObject("STAMC GUI Image SchwungObenLang", resourceCulture);
+                object obj = ResourceManager.GetObject("SONGGARDEWUmr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

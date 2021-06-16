@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI_STAM_C
+namespace SONGGARDE
 {
     public partial class FRM_Update : Form
     {

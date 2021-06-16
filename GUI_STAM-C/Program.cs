@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI_STAM_C
+namespace SONGGARDE
 {
     static class Program
     {

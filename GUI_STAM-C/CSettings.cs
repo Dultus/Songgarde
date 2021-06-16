@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-namespace GUI_STAM_C
+namespace SONGGARDE
 {
     [XmlRoot(ElementName = "Settings")]
     public class Settings

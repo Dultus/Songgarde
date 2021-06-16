@@ -4,7 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Drawing;
 
-namespace GUI_STAM_C
+namespace SONGGARDE
 {
     public class FilePackageReader
     {

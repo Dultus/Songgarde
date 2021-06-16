@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{38CC16BD-CE22-4FB0-8A25-D16CC5D86580}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GUI_STAM_C</RootNamespace>
-    <AssemblyName>GUI_STAM-C</AssemblyName>
+    <RootNamespace>SONGGARDE</RootNamespace>
+    <AssemblyName>SONGGARDE</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -146,6 +146,11 @@
     <None Include="Resources\STAM-C.png" />
     <None Include="Resources\STAM-CWUmr.png" />
     <None Include="bin\Debug\DultusReview.png" />
+    <None Include="Resources\SONGGARDEWUmr.png" />
+    <None Include="Resources\SONGGARDE Image Schwung.png" />
+    <None Include="Resources\SONGGARDE Image SchwungOben.png" />
+    <None Include="Resources\SONGGARDE Image SchwungObenLang.png" />
+    <None Include="Resources\SONGGARDE.png" />
     <Content Include="STAM-C.ico" />
     <Content Include="STAMC.ico" />
   </ItemGroup>

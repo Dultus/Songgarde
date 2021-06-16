@@ -1,4 +1,4 @@
-﻿namespace GUI_STAM_C
+﻿namespace SONGGARDE
 {
     partial class FRM_Main
     {
@@ -47,7 +47,6 @@
             this.BTN_Close = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FRM_Shadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PB_Play = new System.Windows.Forms.PictureBox();
             this.PB_Preview = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -61,7 +60,6 @@
             this.PNL_TopWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -304,15 +302,15 @@
             this.LBL_Titlebar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_Titlebar.Location = new System.Drawing.Point(33, 8);
             this.LBL_Titlebar.Name = "LBL_Titlebar";
-            this.LBL_Titlebar.Size = new System.Drawing.Size(69, 20);
+            this.LBL_Titlebar.Size = new System.Drawing.Size(115, 20);
             this.LBL_Titlebar.TabIndex = 33;
-            this.LBL_Titlebar.Text = "STAM-C";
+            this.LBL_Titlebar.Text = "SONGGARDE";
             this.LBL_Titlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
             // 
             // PB_Icon
             // 
             this.PB_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Icon.BackgroundImage = global::GUI_STAM_C.Properties.Resources.STAM_CWUmr;
+            this.PB_Icon.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE;
             this.PB_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PB_Icon.Location = new System.Drawing.Point(2, 2);
             this.PB_Icon.Margin = new System.Windows.Forms.Padding(10);
@@ -348,7 +346,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::GUI_STAM_C.Properties.Resources.STAMC_GUI_Image_SchwungObenLang;
+            this.pictureBox2.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_SchwungObenLang;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(190, 0);
             this.pictureBox2.Name = "pictureBox2";
@@ -356,17 +354,6 @@
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.pictureBox3.BackgroundImage = global::GUI_STAM_C.Properties.Resources.DultusReview;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(187, 85);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(214, 173);
-            this.pictureBox3.TabIndex = 32;
-            this.pictureBox3.TabStop = false;
             // 
             // PB_Play
             // 
@@ -398,7 +385,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::GUI_STAM_C.Properties.Resources.STAMC_GUI_Image_Schwung;
+            this.pictureBox1.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_Schwung;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 310);
             this.pictureBox1.Name = "pictureBox1";
@@ -481,7 +468,6 @@
             this.Controls.Add(this.LBL_Preview);
             this.Controls.Add(this.PB_Preview);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -495,7 +481,6 @@
             this.PNL_TopWindow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -525,7 +510,6 @@
         private Guna.UI2.WinForms.Guna2Button BTN_Close;
         private System.Windows.Forms.PictureBox PB_Icon;
         private System.Windows.Forms.Label LBL_Titlebar;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ContextMenuStrip CMS_Main;
         private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem plansToolStripMenuItem;

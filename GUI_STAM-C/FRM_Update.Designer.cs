@@ -1,4 +1,4 @@
-﻿namespace GUI_STAM_C
+﻿namespace SONGGARDE
 {
     partial class FRM_Update
     {

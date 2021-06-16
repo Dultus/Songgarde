@@ -1,4 +1,4 @@
-﻿namespace GUI_STAM_C
+﻿namespace SONGGARDE
 {
     partial class FRM_Preview
     {
@@ -52,7 +52,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::GUI_STAM_C.Properties.Resources.SkyrimSymbol;
+            this.pictureBox1.BackgroundImage = global::SONGGARDE.Properties.Resources.SkyrimSymbol;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(225, 60);
             this.pictureBox1.Name = "pictureBox1";
