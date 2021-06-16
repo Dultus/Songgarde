@@ -474,7 +474,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FRM_Main";
-            this.Text = "STAM-C";
+            this.Text = "SONGGARDE";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Main_FormClosing);
             this.Load += new System.EventHandler(this.FRM_Main_Load);
             this.PNL_TopWindow.ResumeLayout(false);
