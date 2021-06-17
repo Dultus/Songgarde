@@ -20,16 +20,6 @@ namespace SONGGARDE
 {
     public partial class FRM_Main : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // width of ellipse
-            int nHeightEllipse // height of ellipse
-        );
 
 
 
@@ -39,19 +29,11 @@ namespace SONGGARDE
         private string sVersion = "0.0.1";
         private string sOnlineVersion;
         public string sOrigBGImagePath, sOrigTitleMusicPath, sExtension;
-        public string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\STAM-C";
+        public string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SONGGARDE";
 
         public static Settings m_Settings = new Settings();
         private List<string> lstAllowedImageExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".gif" };
         private List<string> lstAllowedMusicExtensions = new List<string> { ".wav", ".mp3" };
-
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
 
         public FRM_Main()
         {
@@ -109,30 +91,31 @@ namespace SONGGARDE
             }
             if (m_Settings.SkyrimPath == "")
             {
-                MessageBox.Show("New!");
+                FRM_Setup setup = new FRM_Setup();
+                setup.ShowDialog();
             }
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             UpdateImports();
-            LBL_Notifications.Text = "STAM-C Loaded.";
             if (File.Exists(sAppData + @"\TitleImage.jpg"))
             {
                 using (FileStream stream = new FileStream(sAppData + @"\TitleImage.jpg", FileMode.Open, FileAccess.Read))
                 {
                     PB_Preview.BackgroundImage = Image.FromStream(stream);
+                    LBL_Preview.Visible = true;
                 }
             }
             TB_SkyrimPath.Text = m_Settings.SkyrimPath;
             PB_Preview.Controls.Add(PB_Play);
             PB_Play.Padding = new Padding(30);
             PB_Play.Dock = DockStyle.Fill;
+            LBL_Notifications.Text = "SONGGARDE loaded";
         }
         private void UpdateImports()
         {
             CB_STAM.Items.Clear();
             foreach (var filename in Directory.GetFiles(sAppData + @"\Packages"))
             {
-                if (System.IO.Path.GetExtension(filename).Equals(".STAM", StringComparison.OrdinalIgnoreCase))
+                if (System.IO.Path.GetExtension(filename).Equals(".SONG", StringComparison.OrdinalIgnoreCase))
                 {
                     CB_STAM.Items.Add(Path.GetFileNameWithoutExtension(filename));
                     CB_STAM.SelectedIndex = 0;
@@ -198,6 +181,7 @@ namespace SONGGARDE
             using (FileStream stream = new FileStream(sAppData + @"\TitleImage.jpg", FileMode.Open, FileAccess.Read))
             {
                 PB_Preview.BackgroundImage = Image.FromStream(stream);
+                LBL_Preview.Visible = true;
                 ConvertImages();
             }
         }
@@ -340,6 +324,7 @@ namespace SONGGARDE
 
         private void FRM_Main_Load(object sender, EventArgs e)
         {
+            CFormBuilder.round(this);
             if (bCloseAfterYes)
             {
                 this.Close();
@@ -388,22 +373,14 @@ namespace SONGGARDE
                 {
                     TB_SkyrimPath.Text = ofd.FileName;
                 }
+                m_Settings.SkyrimPath = TB_SkyrimPath.Text;
+                LBL_Notifications.Text = "Skyrim Path set.";
             }
-            m_Settings.SkyrimPath = TB_SkyrimPath.Text;
-        }
-        private void TB_SkyrimPath_TextChanged(object sender, EventArgs e)
-        {
-            m_Settings.SkyrimPath = TB_SkyrimPath.Text;
-            LBL_Notifications.Text = "Skyrim Path set.";
         }
 
         private void PNL_TopWindow_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
+            CFormBuilder.move(this, e);
         }
 
         private void BTN_Close_Click(object sender, EventArgs e)
@@ -451,7 +428,7 @@ namespace SONGGARDE
 
 
 
-            ZipFile.CreateFromDirectory(sAppData + "/Packages/temp", sAppData + "/Packages/STAM-C_PACKAGE_" + DateTime.Now.Ticks.ToString() + ".STAM");
+            ZipFile.CreateFromDirectory(sAppData + "/Packages/temp", sAppData + "/Packages/SONGGARDE_PACKAGE_" + DateTime.Now.Ticks.ToString() + ".SONG");
             Directory.Delete(sAppData + "/Packages/temp", true);
             UpdateImports();
 
@@ -462,9 +439,10 @@ namespace SONGGARDE
             CMS_Main.Show(Cursor.Position);
         }
 
-        private void changelogToolStripMenuItem_Click(object sender, EventArgs e)
+        private void setupFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FRM_Setup setup = new FRM_Setup();
+            setup.ShowDialog();
         }
 
         private void ChangeTitleMusic_Click(object sender, EventArgs e)

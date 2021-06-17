@@ -57,6 +57,9 @@
             this.LBL_Notifications = new System.Windows.Forms.Label();
             this.LBL_TitleMusic = new System.Windows.Forms.Label();
             this.LBL_Backgroundimage = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setupFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PNL_TopWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,6 +78,7 @@
             this.LBL_Preview.Size = new System.Drawing.Size(45, 13);
             this.LBL_Preview.TabIndex = 3;
             this.LBL_Preview.Text = "Preview";
+            this.LBL_Preview.Visible = false;
             // 
             // CB_STAM
             // 
@@ -191,12 +195,12 @@
             this.BTN_ChangeDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_ChangeDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BTN_ChangeDirectory.HoverState.Parent = this.BTN_ChangeDirectory;
-            this.BTN_ChangeDirectory.Location = new System.Drawing.Point(479, 40);
+            this.BTN_ChangeDirectory.Location = new System.Drawing.Point(521, 40);
             this.BTN_ChangeDirectory.Name = "BTN_ChangeDirectory";
             this.BTN_ChangeDirectory.ShadowDecoration.Parent = this.BTN_ChangeDirectory;
-            this.BTN_ChangeDirectory.Size = new System.Drawing.Size(174, 29);
+            this.BTN_ChangeDirectory.Size = new System.Drawing.Size(132, 29);
             this.BTN_ChangeDirectory.TabIndex = 27;
-            this.BTN_ChangeDirectory.Text = "Change Root Directory";
+            this.BTN_ChangeDirectory.Text = "Set Root Directory";
             this.BTN_ChangeDirectory.Click += new System.EventHandler(this.BTN_ChangeDirectory_Click);
             // 
             // TB_SkyrimPath
@@ -218,11 +222,11 @@
             this.TB_SkyrimPath.Name = "TB_SkyrimPath";
             this.TB_SkyrimPath.PasswordChar = '\0';
             this.TB_SkyrimPath.PlaceholderText = "";
+            this.TB_SkyrimPath.ReadOnly = true;
             this.TB_SkyrimPath.SelectedText = "";
             this.TB_SkyrimPath.ShadowDecoration.Parent = this.TB_SkyrimPath;
-            this.TB_SkyrimPath.Size = new System.Drawing.Size(461, 29);
+            this.TB_SkyrimPath.Size = new System.Drawing.Size(503, 29);
             this.TB_SkyrimPath.TabIndex = 28;
-            this.TB_SkyrimPath.TextChanged += new System.EventHandler(this.TB_SkyrimPath_TextChanged);
             // 
             // PNL_TopWindow
             // 
@@ -370,16 +374,16 @@
             this.plansToolStripMenuItem,
             this.nexuswebsiteToolStripMenuItem,
             this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.CMS_Main.Name = "CMS_Main";
-            this.CMS_Main.Size = new System.Drawing.Size(183, 98);
+            this.CMS_Main.Size = new System.Drawing.Size(183, 142);
             // 
             // changelogToolStripMenuItem
             // 
             this.changelogToolStripMenuItem.Name = "changelogToolStripMenuItem";
             this.changelogToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.changelogToolStripMenuItem.Text = "Changelog";
-            this.changelogToolStripMenuItem.Click += new System.EventHandler(this.changelogToolStripMenuItem_Click);
             // 
             // plansToolStripMenuItem
             // 
@@ -453,6 +457,30 @@
             this.LBL_Backgroundimage.DragEnter += new System.Windows.Forms.DragEventHandler(this.ChangeBackgroundImage_DragEnter);
             this.LBL_Backgroundimage.Resize += new System.EventHandler(this.LBL_Backgroundimage_Resize);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(25)))));
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(665, 10);
+            this.panel1.TabIndex = 35;
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setupFormToolStripMenuItem});
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // setupFormToolStripMenuItem
+            // 
+            this.setupFormToolStripMenuItem.Name = "setupFormToolStripMenuItem";
+            this.setupFormToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setupFormToolStripMenuItem.Text = "Setup Form";
+            this.setupFormToolStripMenuItem.Click += new System.EventHandler(this.setupFormToolStripMenuItem_Click);
+            // 
             // FRM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +503,7 @@
             this.Controls.Add(this.LBL_Preview);
             this.Controls.Add(this.PB_Preview);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -525,6 +554,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label LBL_TitleMusic;
         private System.Windows.Forms.Label LBL_Backgroundimage;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setupFormToolStripMenuItem;
     }
 }
 
