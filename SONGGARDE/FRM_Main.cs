@@ -20,6 +20,19 @@ namespace SONGGARDE
 {
     public partial class FRM_Main : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
+
+
         public static bool bNoReminder = false;
         public static bool bCloseAfterYes;
 
@@ -76,7 +89,7 @@ namespace SONGGARDE
             }
             //Load XML - assign Variables
             //Check Version
-            var webRequest = WebRequest.Create("https://raw.githubusercontent.com/Dultus/STAM-C/main/Version");
+            var webRequest = WebRequest.Create("https://raw.githubusercontent.com/Dultus/Songgarde/master/Version");
 
             using (var response = webRequest.GetResponse())
             using (var content = response.GetResponseStream())
@@ -99,6 +112,7 @@ namespace SONGGARDE
                 MessageBox.Show("New!");
             }
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             UpdateImports();
             LBL_Notifications.Text = "STAM-C Loaded.";
             if (File.Exists(sAppData + @"\TitleImage.jpg"))
@@ -167,6 +181,7 @@ namespace SONGGARDE
         }
         private void SetLabelBackgroundImage()
         {
+            LBL_Backgroundimage.Visible = true;
             Directory.CreateDirectory(m_Settings.SkyrimPath + @"\Data\textures\interface\objects");
             PB_Preview.BackgroundImage = null;
             LBL_Backgroundimage.Text = Path.GetFileName(sOrigBGImagePath);
@@ -447,6 +462,11 @@ namespace SONGGARDE
             CMS_Main.Show(Cursor.Position);
         }
 
+        private void changelogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ChangeTitleMusic_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -467,6 +487,7 @@ namespace SONGGARDE
         }
         private void SetLabelMusic()
         {
+            LBL_TitleMusic.Visible = true;
             LBL_TitleMusic.Text = Path.GetFileName(sOrigTitleMusicPath);
             File.Copy(sOrigTitleMusicPath, sAppData + @"\TitleMusic" + sExtension, true);
             if (sExtension.Equals(".mp3", StringComparison.OrdinalIgnoreCase))

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Main));
             this.LBL_Preview = new System.Windows.Forms.Label();
-            this.LBL_TitleMusic = new System.Windows.Forms.Label();
-            this.LBL_Backgroundimage = new System.Windows.Forms.Label();
             this.CB_STAM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.BTN_ImportSTAM = new Guna.UI2.WinForms.Guna2Button();
             this.BTN_ExportSTAM = new Guna.UI2.WinForms.Guna2Button();
@@ -53,10 +51,12 @@
             this.CMS_Main = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nexuswebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LBL_Notifications = new System.Windows.Forms.Label();
+            this.LBL_TitleMusic = new System.Windows.Forms.Label();
+            this.LBL_Backgroundimage = new System.Windows.Forms.Label();
             this.PNL_TopWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,40 +75,6 @@
             this.LBL_Preview.Size = new System.Drawing.Size(45, 13);
             this.LBL_Preview.TabIndex = 3;
             this.LBL_Preview.Text = "Preview";
-            // 
-            // LBL_TitleMusic
-            // 
-            this.LBL_TitleMusic.AllowDrop = true;
-            this.LBL_TitleMusic.AutoSize = true;
-            this.LBL_TitleMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.LBL_TitleMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_TitleMusic.Location = new System.Drawing.Point(9, 156);
-            this.LBL_TitleMusic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LBL_TitleMusic.Name = "LBL_TitleMusic";
-            this.LBL_TitleMusic.Size = new System.Drawing.Size(96, 13);
-            this.LBL_TitleMusic.TabIndex = 5;
-            this.LBL_TitleMusic.Text = "Drag & Drop Music";
-            this.LBL_TitleMusic.UseMnemonic = false;
-            this.LBL_TitleMusic.DragDrop += new System.Windows.Forms.DragEventHandler(this.ChangeTitleMusic_DragDrop);
-            this.LBL_TitleMusic.DragEnter += new System.Windows.Forms.DragEventHandler(this.ChangeTitleMusic_DragEnter);
-            this.LBL_TitleMusic.Resize += new System.EventHandler(this.LBL_Backgroundimage_Resize);
-            // 
-            // LBL_Backgroundimage
-            // 
-            this.LBL_Backgroundimage.AllowDrop = true;
-            this.LBL_Backgroundimage.AutoSize = true;
-            this.LBL_Backgroundimage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.LBL_Backgroundimage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Backgroundimage.Location = new System.Drawing.Point(9, 120);
-            this.LBL_Backgroundimage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LBL_Backgroundimage.Name = "LBL_Backgroundimage";
-            this.LBL_Backgroundimage.Size = new System.Drawing.Size(97, 13);
-            this.LBL_Backgroundimage.TabIndex = 6;
-            this.LBL_Backgroundimage.Text = "Drag & Drop Image";
-            this.LBL_Backgroundimage.UseMnemonic = false;
-            this.LBL_Backgroundimage.DragDrop += new System.Windows.Forms.DragEventHandler(this.ChangeBackgroundImage_DragDrop);
-            this.LBL_Backgroundimage.DragEnter += new System.Windows.Forms.DragEventHandler(this.ChangeBackgroundImage_DragEnter);
-            this.LBL_Backgroundimage.Resize += new System.EventHandler(this.LBL_Backgroundimage_Resize);
             // 
             // CB_STAM
             // 
@@ -181,7 +147,7 @@
             this.BTN_ChangeBackgroundimage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_ChangeBackgroundimage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BTN_ChangeBackgroundimage.HoverState.Parent = this.BTN_ChangeBackgroundimage;
-            this.BTN_ChangeBackgroundimage.Location = new System.Drawing.Point(479, 116);
+            this.BTN_ChangeBackgroundimage.Location = new System.Drawing.Point(12, 96);
             this.BTN_ChangeBackgroundimage.Name = "BTN_ChangeBackgroundimage";
             this.BTN_ChangeBackgroundimage.ShadowDecoration.Parent = this.BTN_ChangeBackgroundimage;
             this.BTN_ChangeBackgroundimage.Size = new System.Drawing.Size(154, 29);
@@ -203,7 +169,7 @@
             this.BTN_ChangeTitleMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_ChangeTitleMusic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BTN_ChangeTitleMusic.HoverState.Parent = this.BTN_ChangeTitleMusic;
-            this.BTN_ChangeTitleMusic.Location = new System.Drawing.Point(479, 152);
+            this.BTN_ChangeTitleMusic.Location = new System.Drawing.Point(12, 152);
             this.BTN_ChangeTitleMusic.Name = "BTN_ChangeTitleMusic";
             this.BTN_ChangeTitleMusic.ShadowDecoration.Parent = this.BTN_ChangeTitleMusic;
             this.BTN_ChangeTitleMusic.Size = new System.Drawing.Size(154, 29);
@@ -228,7 +194,7 @@
             this.BTN_ChangeDirectory.Location = new System.Drawing.Point(479, 40);
             this.BTN_ChangeDirectory.Name = "BTN_ChangeDirectory";
             this.BTN_ChangeDirectory.ShadowDecoration.Parent = this.BTN_ChangeDirectory;
-            this.BTN_ChangeDirectory.Size = new System.Drawing.Size(154, 29);
+            this.BTN_ChangeDirectory.Size = new System.Drawing.Size(174, 29);
             this.BTN_ChangeDirectory.TabIndex = 27;
             this.BTN_ChangeDirectory.Text = "Change Root Directory";
             this.BTN_ChangeDirectory.Click += new System.EventHandler(this.BTN_ChangeDirectory_Click);
@@ -355,6 +321,10 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
             // 
+            // FRM_Shadow
+            // 
+            this.FRM_Shadow.TargetForm = this;
+            // 
             // PB_Play
             // 
             this.PB_Play.BackColor = System.Drawing.Color.Transparent;
@@ -398,17 +368,18 @@
             this.CMS_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changelogToolStripMenuItem,
             this.plansToolStripMenuItem,
-            this.websiteToolStripMenuItem,
             this.nexuswebsiteToolStripMenuItem,
+            this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.CMS_Main.Name = "CMS_Main";
-            this.CMS_Main.Size = new System.Drawing.Size(183, 114);
+            this.CMS_Main.Size = new System.Drawing.Size(183, 98);
             // 
             // changelogToolStripMenuItem
             // 
             this.changelogToolStripMenuItem.Name = "changelogToolStripMenuItem";
             this.changelogToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.changelogToolStripMenuItem.Text = "Changelog";
+            this.changelogToolStripMenuItem.Click += new System.EventHandler(this.changelogToolStripMenuItem_Click);
             // 
             // plansToolStripMenuItem
             // 
@@ -416,19 +387,17 @@
             this.plansToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.plansToolStripMenuItem.Text = "Future Plans";
             // 
-            // websiteToolStripMenuItem
-            // 
-            this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
-            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.websiteToolStripMenuItem.Text = "Website";
-            this.websiteToolStripMenuItem.Click += new System.EventHandler(this.websiteToolStripMenuItem_Click);
-            // 
             // nexuswebsiteToolStripMenuItem
             // 
             this.nexuswebsiteToolStripMenuItem.Name = "nexuswebsiteToolStripMenuItem";
             this.nexuswebsiteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.nexuswebsiteToolStripMenuItem.Text = "Nexusmods Website";
             this.nexuswebsiteToolStripMenuItem.Click += new System.EventHandler(this.nexuswebsiteToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -445,6 +414,44 @@
             this.LBL_Notifications.Size = new System.Drawing.Size(86, 13);
             this.LBL_Notifications.TabIndex = 33;
             this.LBL_Notifications.Text = "PLACEHOLDER";
+            // 
+            // LBL_TitleMusic
+            // 
+            this.LBL_TitleMusic.AllowDrop = true;
+            this.LBL_TitleMusic.AutoSize = true;
+            this.LBL_TitleMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.LBL_TitleMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_TitleMusic.Location = new System.Drawing.Point(187, 161);
+            this.LBL_TitleMusic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LBL_TitleMusic.Name = "LBL_TitleMusic";
+            this.LBL_TitleMusic.Size = new System.Drawing.Size(86, 13);
+            this.LBL_TitleMusic.TabIndex = 5;
+            this.LBL_TitleMusic.Text = "PLACEHOLDER";
+            this.LBL_TitleMusic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LBL_TitleMusic.UseMnemonic = false;
+            this.LBL_TitleMusic.Visible = false;
+            this.LBL_TitleMusic.DragDrop += new System.Windows.Forms.DragEventHandler(this.ChangeTitleMusic_DragDrop);
+            this.LBL_TitleMusic.DragEnter += new System.Windows.Forms.DragEventHandler(this.ChangeTitleMusic_DragEnter);
+            this.LBL_TitleMusic.Resize += new System.EventHandler(this.LBL_Backgroundimage_Resize);
+            // 
+            // LBL_Backgroundimage
+            // 
+            this.LBL_Backgroundimage.AllowDrop = true;
+            this.LBL_Backgroundimage.AutoSize = true;
+            this.LBL_Backgroundimage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.LBL_Backgroundimage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Backgroundimage.Location = new System.Drawing.Point(187, 105);
+            this.LBL_Backgroundimage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LBL_Backgroundimage.Name = "LBL_Backgroundimage";
+            this.LBL_Backgroundimage.Size = new System.Drawing.Size(86, 13);
+            this.LBL_Backgroundimage.TabIndex = 6;
+            this.LBL_Backgroundimage.Text = "PLACEHOLDER";
+            this.LBL_Backgroundimage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LBL_Backgroundimage.UseMnemonic = false;
+            this.LBL_Backgroundimage.Visible = false;
+            this.LBL_Backgroundimage.DragDrop += new System.Windows.Forms.DragEventHandler(this.ChangeBackgroundImage_DragDrop);
+            this.LBL_Backgroundimage.DragEnter += new System.Windows.Forms.DragEventHandler(this.ChangeBackgroundImage_DragEnter);
+            this.LBL_Backgroundimage.Resize += new System.EventHandler(this.LBL_Backgroundimage_Resize);
             // 
             // FRM_Main
             // 
@@ -494,8 +501,6 @@
         private System.Windows.Forms.PictureBox PB_Preview;
         private System.Windows.Forms.Label LBL_Preview;
         private System.Windows.Forms.PictureBox PB_Play;
-        private System.Windows.Forms.Label LBL_TitleMusic;
-        private System.Windows.Forms.Label LBL_Backgroundimage;
         private Guna.UI2.WinForms.Guna2ComboBox CB_STAM;
         private Guna.UI2.WinForms.Guna2Button BTN_ImportSTAM;
         private Guna.UI2.WinForms.Guna2Button BTN_ExportSTAM;
@@ -513,11 +518,13 @@
         private System.Windows.Forms.ContextMenuStrip CMS_Main;
         private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem plansToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem websiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nexuswebsiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label LBL_Notifications;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label LBL_TitleMusic;
+        private System.Windows.Forms.Label LBL_Backgroundimage;
     }
 }
 
