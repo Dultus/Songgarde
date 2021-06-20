@@ -40,7 +40,9 @@
             this.PNL_TopWindow = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.LBL_Titlebar = new System.Windows.Forms.Label();
+            this.PB_Icon = new System.Windows.Forms.PictureBox();
             this.BTN_Close = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FRM_Shadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.CMS_Main = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,19 +64,17 @@
             this.btnRemoveImage = new Guna.UI2.WinForms.Guna2Button();
             this.pbFog = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbSkyrimLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.PB_Icon = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PB_Play = new System.Windows.Forms.PictureBox();
             this.PB_Preview = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PNL_TopWindow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.CMS_Main.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkyrimLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -271,6 +271,20 @@
             this.LBL_Titlebar.Text = "SONGGARDE";
             this.LBL_Titlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
             // 
+            // PB_Icon
+            // 
+            this.PB_Icon.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Icon.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE;
+            this.PB_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Icon.Location = new System.Drawing.Point(2, 2);
+            this.PB_Icon.Margin = new System.Windows.Forms.Padding(10);
+            this.PB_Icon.Name = "PB_Icon";
+            this.PB_Icon.Padding = new System.Windows.Forms.Padding(10);
+            this.PB_Icon.Size = new System.Drawing.Size(30, 30);
+            this.PB_Icon.TabIndex = 32;
+            this.PB_Icon.TabStop = false;
+            this.PB_Icon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
+            // 
             // BTN_Close
             // 
             this.BTN_Close.Animated = true;
@@ -293,6 +307,17 @@
             this.BTN_Close.Text = "X";
             this.BTN_Close.UseTransparentBackground = true;
             this.BTN_Close.Click += new System.EventHandler(this.BTN_Close_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_SchwungObenLang;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(190, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(475, 34);
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
             // 
             // FRM_Shadow
             // 
@@ -432,9 +457,9 @@
             this.chkSkyrimLogo.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkSkyrimLogo.Location = new System.Drawing.Point(22, 230);
             this.chkSkyrimLogo.Name = "chkSkyrimLogo";
-            this.chkSkyrimLogo.Size = new System.Drawing.Size(120, 17);
+            this.chkSkyrimLogo.Size = new System.Drawing.Size(120, 30);
             this.chkSkyrimLogo.TabIndex = 37;
-            this.chkSkyrimLogo.Text = "Enable Skyrim Logo";
+            this.chkSkyrimLogo.Text = "Enable Skyrim Logo\r\n(Not working yet)";
             this.chkSkyrimLogo.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkSkyrimLogo.UncheckedState.BorderRadius = 0;
             this.chkSkyrimLogo.UncheckedState.BorderThickness = 0;
@@ -552,31 +577,6 @@
             this.pbSkyrimLogo.UseTransparentBackground = true;
             this.pbSkyrimLogo.Visible = false;
             // 
-            // PB_Icon
-            // 
-            this.PB_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Icon.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE;
-            this.PB_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PB_Icon.Location = new System.Drawing.Point(2, 2);
-            this.PB_Icon.Margin = new System.Windows.Forms.Padding(10);
-            this.PB_Icon.Name = "PB_Icon";
-            this.PB_Icon.Padding = new System.Windows.Forms.Padding(10);
-            this.PB_Icon.Size = new System.Drawing.Size(30, 30);
-            this.PB_Icon.TabIndex = 32;
-            this.PB_Icon.TabStop = false;
-            this.PB_Icon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_SchwungObenLang;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(190, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(475, 34);
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
-            // 
             // PB_Play
             // 
             this.PB_Play.BackColor = System.Drawing.Color.Transparent;
@@ -667,13 +667,13 @@
             this.Load += new System.EventHandler(this.FRM_Main_Load);
             this.PNL_TopWindow.ResumeLayout(false);
             this.PNL_TopWindow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.CMS_Main.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkyrimLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

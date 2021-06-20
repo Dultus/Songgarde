@@ -92,8 +92,8 @@ namespace SONGGARDE
             }
             if (m_Settings.SkyrimPath == "")
             {
-                FRM_Setup setup = new FRM_Setup();
-                setup.ShowDialog();
+             //   FRM_Setup setup = new FRM_Setup();
+             //   setup.ShowDialog();
             }
             InitializeComponent();
             UpdateImports();
@@ -279,7 +279,7 @@ namespace SONGGARDE
 
                 using (FileStream stream = new FileStream(sAppData + @"\TitleImage.jpg", FileMode.Open, FileAccess.Read))
                 {
-                    using (Bitmap imgWatermark = new Bitmap((Bitmap)Image.FromStream(stream), new Size(1987, 1084)))
+                    using (Bitmap imgWatermark = new Bitmap((Bitmap)Image.FromStream(stream), new Size(2048, 1154)))
                     {
                         int wmWidth = imgWatermark.Width;
                         int wmHeight = imgWatermark.Height;
@@ -293,8 +293,8 @@ namespace SONGGARDE
                             using (Graphics grWatermark = Graphics.FromImage(bmWatermark))
                             {
 
-                                int xPosOfWm = 3;
-                                int yPosOfWm = 328;
+                                int xPosOfWm = 0;
+                                int yPosOfWm = 322;
 
                                 grWatermark.DrawImage(imgWatermark, new Rectangle(xPosOfWm, yPosOfWm, wmWidth, wmHeight), 0, 0, wmWidth, wmHeight, GraphicsUnit.Pixel);
 
@@ -573,15 +573,15 @@ namespace SONGGARDE
         {
             if ((sender as CheckBox).Checked)
             {
+                pbSkyrimLogo.Visible = true;
                 pbSkyrimLogo.Refresh();
                 pbFog.Refresh();
-                pbSkyrimLogo.Visible = true;
             }
             else
             {
+                pbSkyrimLogo.Visible = false;
                 pbSkyrimLogo.Refresh();
                 pbFog.Refresh();
-                pbSkyrimLogo.Visible = false;
             }
             Directory.CreateDirectory(m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\");
             if (!chkFog.Checked && !chkSkyrimLogo.Checked)
@@ -623,7 +623,7 @@ namespace SONGGARDE
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     sExtension = System.IO.Path.GetExtension(ofd.FileName);
-                    if (lstAllowedImageExtensions.FindIndex(x => x.Equals(sExtension, StringComparison.OrdinalIgnoreCase)) != -1)
+                    if (lstAllowedMusicExtensions.FindIndex(x => x.Equals(sExtension, StringComparison.OrdinalIgnoreCase)) != -1)
                     {
                         sOrigTitleMusicPath = ofd.FileName;
                         SetLabelMusic();
