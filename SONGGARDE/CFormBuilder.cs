@@ -44,6 +44,14 @@ namespace SONGGARDE
         {
             form.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, form.Width, form.Height, 20, 20));
         }
-
+        public static void notify(string strtext, FRM_Main form)
+        {
+            if (form.tbNotifications.Text == "")
+                form.tbNotifications.Text = $"[{ DateTime.Now}] {strtext}";
+            else
+                form.tbNotifications.Text += $"{Environment.NewLine}[{ DateTime.Now}] {strtext}";
+            form.tbNotifications.SelectionStart = form.tbNotifications.Text.Length;
+            form.tbNotifications.ScrollToCaret();
+        }
     }
 }

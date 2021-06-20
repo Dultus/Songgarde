@@ -37,6 +37,8 @@
             this.BTN_Close = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TB_SkyrimPath = new Guna.UI2.WinForms.Guna2TextBox();
+            this.BTN_ChangeDirectory = new Guna.UI2.WinForms.Guna2Button();
             this.PNL_TopWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -151,12 +153,59 @@
             this.panel1.Size = new System.Drawing.Size(800, 10);
             this.panel1.TabIndex = 39;
             // 
+            // TB_SkyrimPath
+            // 
+            this.TB_SkyrimPath.Animated = true;
+            this.TB_SkyrimPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TB_SkyrimPath.DefaultText = "";
+            this.TB_SkyrimPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TB_SkyrimPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TB_SkyrimPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TB_SkyrimPath.DisabledState.Parent = this.TB_SkyrimPath;
+            this.TB_SkyrimPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TB_SkyrimPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TB_SkyrimPath.FocusedState.Parent = this.TB_SkyrimPath;
+            this.TB_SkyrimPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TB_SkyrimPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TB_SkyrimPath.HoverState.Parent = this.TB_SkyrimPath;
+            this.TB_SkyrimPath.Location = new System.Drawing.Point(12, 40);
+            this.TB_SkyrimPath.Name = "TB_SkyrimPath";
+            this.TB_SkyrimPath.PasswordChar = '\0';
+            this.TB_SkyrimPath.PlaceholderText = "";
+            this.TB_SkyrimPath.ReadOnly = true;
+            this.TB_SkyrimPath.SelectedText = "";
+            this.TB_SkyrimPath.ShadowDecoration.Parent = this.TB_SkyrimPath;
+            this.TB_SkyrimPath.Size = new System.Drawing.Size(638, 29);
+            this.TB_SkyrimPath.TabIndex = 41;
+            // 
+            // BTN_ChangeDirectory
+            // 
+            this.BTN_ChangeDirectory.Animated = true;
+            this.BTN_ChangeDirectory.AutoRoundedCorners = true;
+            this.BTN_ChangeDirectory.BorderRadius = 13;
+            this.BTN_ChangeDirectory.CheckedState.Parent = this.BTN_ChangeDirectory;
+            this.BTN_ChangeDirectory.CustomImages.Parent = this.BTN_ChangeDirectory;
+            this.BTN_ChangeDirectory.DisabledState.Parent = this.BTN_ChangeDirectory;
+            this.BTN_ChangeDirectory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(69)))));
+            this.BTN_ChangeDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_ChangeDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BTN_ChangeDirectory.HoverState.Parent = this.BTN_ChangeDirectory;
+            this.BTN_ChangeDirectory.Location = new System.Drawing.Point(656, 40);
+            this.BTN_ChangeDirectory.Name = "BTN_ChangeDirectory";
+            this.BTN_ChangeDirectory.ShadowDecoration.Parent = this.BTN_ChangeDirectory;
+            this.BTN_ChangeDirectory.Size = new System.Drawing.Size(132, 29);
+            this.BTN_ChangeDirectory.TabIndex = 40;
+            this.BTN_ChangeDirectory.Text = "Set Root Directory";
+            // 
             // FRM_Setup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.CancelButton = this.BTN_Close;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TB_SkyrimPath);
+            this.Controls.Add(this.BTN_ChangeDirectory);
             this.Controls.Add(this.PNL_TopWindow);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -181,5 +230,7 @@
         private Guna.UI2.WinForms.Guna2Button BTN_Close;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2TextBox TB_SkyrimPath;
+        private Guna.UI2.WinForms.Guna2Button BTN_ChangeDirectory;
     }
 }

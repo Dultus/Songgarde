@@ -28,6 +28,7 @@ namespace SONGGARDE
 
         private string sVersion = "0.0.1";
         private string sOnlineVersion;
+        public menureplacer bannerinstallmode = 0;
         public string sOrigBGImagePath, sOrigTitleMusicPath, sExtension;
         public string sAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SONGGARDE";
 
@@ -108,14 +109,15 @@ namespace SONGGARDE
             PB_Preview.Controls.Add(PB_Play);
             PB_Play.Padding = new Padding(30);
             PB_Play.Dock = DockStyle.Fill;
-            LBL_Notifications.Text = "SONGGARDE loaded";
+
+            CFormBuilder.notify("SONGGARDE loaded.", this);
         }
         private void UpdateImports()
         {
             CB_STAM.Items.Clear();
             foreach (var filename in Directory.GetFiles(sAppData + @"\Packages"))
             {
-                if (System.IO.Path.GetExtension(filename).Equals(".SONG", StringComparison.OrdinalIgnoreCase))
+                if (System.IO.Path.GetExtension(filename).Equals(".zip", StringComparison.OrdinalIgnoreCase))
                 {
                     CB_STAM.Items.Add(Path.GetFileNameWithoutExtension(filename));
                     CB_STAM.SelectedIndex = 0;
@@ -138,7 +140,7 @@ namespace SONGGARDE
                 sOrigBGImagePath = files[0];
                 SetLabelBackgroundImage();
                 MessageBox.Show("Image added and applied to the game!");
-                LBL_Notifications.Text = "Startup image set.";
+                CFormBuilder.notify("Startup image set.", this);
             }
             else
             {
@@ -157,7 +159,6 @@ namespace SONGGARDE
                     {
                         sOrigBGImagePath = ofd.FileName;
                         SetLabelBackgroundImage();
-                        LBL_Notifications.Text = "Startup image set.";
                     }
                 }
             }
@@ -166,7 +167,6 @@ namespace SONGGARDE
         {
             LBL_Backgroundimage.Visible = true;
             Directory.CreateDirectory(m_Settings.SkyrimPath + @"\Data\textures\interface\objects");
-            PB_Preview.BackgroundImage = null;
             LBL_Backgroundimage.Text = Path.GetFileName(sOrigBGImagePath);
             //File.Copy(sOrigBGImagePath, sAppData + @"\TitleImage.jpg", true);
 
@@ -183,6 +183,53 @@ namespace SONGGARDE
                 PB_Preview.BackgroundImage = Image.FromStream(stream);
                 LBL_Preview.Visible = true;
                 ConvertImages();
+            }
+            if (!chkFog.Checked && !chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Startup image set. (No fog, no logo)", this);
+                bannerinstallmode = menureplacer.nofognologo;
+            }
+            else if (chkFog.Checked && !chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Startup image set. (With fog, no logo)", this);
+                bannerinstallmode = menureplacer.nologo;
+            }
+            else if (!chkFog.Checked && chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Startup image set. (No fog, with logo)", this);
+                bannerinstallmode = menureplacer.nofog;
+            }
+            else
+            {
+                CFormBuilder.notify("Startup image set. (With fog, with logo)", this);
+                bannerinstallmode = menureplacer.fogandlogo;
+            }
+            pbSkyrimLogo.Refresh();
+            pbFog.Refresh();
+        }
+        private void setfogorlogo()
+        {
+            if (bannerinstallmode == menureplacer.nofognologo)
+            {
+                File.Copy(@"interface\nofog.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif", true);
+                File.Copy(@"interface\banner.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+            }
+            else if (bannerinstallmode == menureplacer.nofog)
+            {
+                File.Copy(@"interface\nofog.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif", true);
+                File.Copy(@"interface\logo.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+            }
+            else if (bannerinstallmode == menureplacer.nologo)
+            {
+                if (File.Exists(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif"))
+                    File.Delete(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif");
+                File.Copy(@"interface\banner.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+            }
+            else if (bannerinstallmode == menureplacer.fogandlogo)
+            {
+                if (File.Exists(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif"))
+                    File.Delete(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif");
+                File.Copy(@"interface\logo.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
             }
         }
         private ImageCodecInfo GetEncoder(ImageFormat format)
@@ -306,7 +353,7 @@ namespace SONGGARDE
             else
             {
                 MessageBox.Show("Only following filetypes are allowed:\n.MP3\n.WAV");
-                LBL_Notifications.Text = "Startup music set.";
+                CFormBuilder.notify("Startup music set.", this);
             }
         }
 
@@ -374,7 +421,7 @@ namespace SONGGARDE
                     TB_SkyrimPath.Text = ofd.FileName;
                 }
                 m_Settings.SkyrimPath = TB_SkyrimPath.Text;
-                LBL_Notifications.Text = "Skyrim Path set.";
+                CFormBuilder.notify("Skyrim Path set.", this);
             }
         }
 
@@ -418,20 +465,34 @@ namespace SONGGARDE
 
         private void BTN_ExportSTAM_Click(object sender, EventArgs e)
         {
-            Directory.CreateDirectory(sAppData + "/Packages/temp/data/music/special");
-            Directory.CreateDirectory(sAppData + "/Packages/temp/data/textures/interface/objects");
+            if (File.Exists(sAppData + "/mus_maintheme.wav"))
+                Directory.CreateDirectory(sAppData + "/Packages/temp/data/music/special");
+
+            if (File.Exists(sAppData + "/mainmenuwallpaper.dds"))
+                Directory.CreateDirectory(sAppData + "/Packages/temp/data/textures/interface/objects");
 
 
-            File.Copy(sAppData + "/mainmenuwallpaper.dds", sAppData + "/Packages/temp/data/textures/interface/objects/mainmenuwallpaper.dds");
-            File.Copy(sAppData + "/TitleImage.jpg", sAppData + "/Packages/temp/TitleImage.jpg");
-            File.Copy(sAppData + "/TitleMusic.wav", sAppData + "/Packages/temp/data/music/special/mus_maintheme.wav");
+            if (File.Exists(sAppData + "/mainmenuwallpaper.dds"))
+                File.Copy(sAppData + "/mainmenuwallpaper.dds", sAppData + "/Packages/temp/data/textures/interface/objects/mainmenuwallpaper.dds", true);
+                File.Copy(sAppData + "/TitleImage.jpg", sAppData + "/Packages/temp/TitleImage.jpg", true);
 
+            if (File.Exists(sAppData + "/mus_maintheme.wav"))
+                File.Copy(sAppData + "/TitleMusic.wav", sAppData + "/Packages/temp/data/music/special/mus_maintheme.wav", true);
 
-
-            ZipFile.CreateFromDirectory(sAppData + "/Packages/temp", sAppData + "/Packages/SONGGARDE_PACKAGE_" + DateTime.Now.Ticks.ToString() + ".SONG");
+            if (chkSkyrimLogo.Checked)
+            {
+                Directory.CreateDirectory(sAppData + "/Packages/temp/Data/meshes/interface/logo/");
+                File.Copy(@"interface\logo.nif", sAppData + "/Packages/temp/Data/meshes/interface/logo/logo.nif", true);
+            }
+            if (!chkFog.Checked)
+            {
+                Directory.CreateDirectory(sAppData + "/Packages/temp/data/meshes/interface/");
+                File.Copy(@"interface\nofog.nif", sAppData + "/Packages/temp/data/meshes/interface/intmenufogparticles.nif", true);
+            }
+            ZipFile.CreateFromDirectory(sAppData + "/Packages/temp", sAppData + "/Packages/SONGGARDE_" + DateTime.Now.Ticks.ToString() + ".zip");
             Directory.Delete(sAppData + "/Packages/temp", true);
             UpdateImports();
-
+            Process.Start(sAppData + "/Packages");
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -443,6 +504,115 @@ namespace SONGGARDE
         {
             FRM_Setup setup = new FRM_Setup();
             setup.ShowDialog();
+        }
+
+        private void chkFog_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFog.Checked)
+            {
+                pbSkyrimLogo.Refresh();
+                pbFog.Refresh();
+                pbFog.Visible = true;
+            }
+            else
+            {
+                pbSkyrimLogo.Refresh();
+                pbFog.Refresh();
+                pbFog.Visible = false;
+            }
+            pbSkyrimLogo.Refresh();
+            if (!chkFog.Checked && !chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Fog removed.", this);
+                File.Copy(@"interface\nofog.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif", true);
+                bannerinstallmode = menureplacer.nofognologo;
+            }
+            else if (chkFog.Checked && !chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Fog added.", this);
+                if (File.Exists(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif"))
+                    File.Delete(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif");
+                bannerinstallmode = menureplacer.nologo;
+            }
+            else if (!chkFog.Checked && chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Fog removed.", this);
+                File.Copy(@"interface\nofog.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif", true);
+                bannerinstallmode = menureplacer.nofog;
+            }
+            else
+            {
+                CFormBuilder.notify("Fog added.", this);
+                if (File.Exists(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif"))
+                    File.Delete(m_Settings.SkyrimPath + @"\Data\meshes\interface\intmenufogparticles.nif");
+                bannerinstallmode = menureplacer.fogandlogo;
+            }
+        }
+
+        private void btnRemoveImage_Click(object sender, EventArgs e)
+        {
+            PB_Preview.BackgroundImage = null;
+            pbSkyrimLogo.Visible = true;
+            LBL_Backgroundimage.Text = "";
+            if (File.Exists(m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif"))
+            {
+                File.Delete(m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif");
+            }
+            if (File.Exists(m_Settings.SkyrimPath + @"\Data\textures\interface\objects\mainmenuwallpaper.dds"))
+                File.Delete(m_Settings.SkyrimPath + @"\Data\textures\interface\objects\mainmenuwallpaper.dds");
+            chkSkyrimLogo.Checked = true;
+        }
+
+        private void btnRemoveMusic_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(m_Settings.SkyrimPath + @"\Data\music\special\mus_maintheme.wav"))
+                File.Delete(m_Settings.SkyrimPath + @"\Data\music\special\mus_maintheme.wav");
+        }
+
+        private void chkSkyrimLogo_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as CheckBox).Checked)
+            {
+                pbSkyrimLogo.Refresh();
+                pbFog.Refresh();
+                pbSkyrimLogo.Visible = true;
+            }
+            else
+            {
+                pbSkyrimLogo.Refresh();
+                pbFog.Refresh();
+                pbSkyrimLogo.Visible = false;
+            }
+            Directory.CreateDirectory(m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\");
+            if (!chkFog.Checked && !chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Logo removed.", this);
+                File.Copy(@"interface\banner.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+                bannerinstallmode = menureplacer.nofognologo;
+            }
+            else if (chkFog.Checked && !chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Logo removed.", this);
+                File.Copy(@"interface\banner.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+                bannerinstallmode = menureplacer.nologo;
+            }
+            else if (!chkFog.Checked && chkSkyrimLogo.Checked)
+            {
+                CFormBuilder.notify("Logo added.", this);
+                File.Copy(@"interface\logo.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+                bannerinstallmode = menureplacer.nofog;
+            }
+            else
+            {
+                CFormBuilder.notify("Logo added.", this);
+                File.Copy(@"interface\logo.nif", m_Settings.SkyrimPath + @"\Data\meshes\interface\logo\logo.nif", true);
+                bannerinstallmode = menureplacer.fogandlogo;
+            }
+        }
+
+        private void BTN_ImportSTAM_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ChangeTitleMusic_Click(object sender, EventArgs e)
@@ -457,7 +627,7 @@ namespace SONGGARDE
                     {
                         sOrigTitleMusicPath = ofd.FileName;
                         SetLabelMusic();
-                        LBL_Notifications.Text = "Startup music set.";
+                        CFormBuilder.notify("Startup music set.", this);
                     }
                 }
             }

@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Main));
             this.LBL_Preview = new System.Windows.Forms.Label();
             this.CB_STAM = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.BTN_ImportSTAM = new Guna.UI2.WinForms.Guna2Button();
             this.BTN_ExportSTAM = new Guna.UI2.WinForms.Guna2Button();
             this.BTN_ChangeBackgroundimage = new Guna.UI2.WinForms.Guna2Button();
             this.BTN_ChangeTitleMusic = new Guna.UI2.WinForms.Guna2Button();
@@ -41,32 +40,43 @@
             this.PNL_TopWindow = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.LBL_Titlebar = new System.Windows.Forms.Label();
-            this.PB_Icon = new System.Windows.Forms.PictureBox();
             this.BTN_Close = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FRM_Shadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.PB_Play = new System.Windows.Forms.PictureBox();
-            this.PB_Preview = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CMS_Main = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nexuswebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LBL_Notifications = new System.Windows.Forms.Label();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setupFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LBL_TitleMusic = new System.Windows.Forms.Label();
             this.LBL_Backgroundimage = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setupFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chkFog = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkSkyrimLogo = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tbNotifications = new System.Windows.Forms.TextBox();
+            this.btnRemoveMusic = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRemoveImage = new Guna.UI2.WinForms.Guna2Button();
+            this.pbFog = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbSkyrimLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.PB_Icon = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PB_Play = new System.Windows.Forms.PictureBox();
+            this.PB_Preview = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PNL_TopWindow.SuspendLayout();
+            this.CMS_Main.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkyrimLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.CMS_Main.SuspendLayout();
             this.SuspendLayout();
             // 
             // LBL_Preview
@@ -99,25 +109,7 @@
             this.CB_STAM.ShadowDecoration.Parent = this.CB_STAM;
             this.CB_STAM.Size = new System.Drawing.Size(308, 36);
             this.CB_STAM.TabIndex = 22;
-            // 
-            // BTN_ImportSTAM
-            // 
-            this.BTN_ImportSTAM.Animated = true;
-            this.BTN_ImportSTAM.AutoRoundedCorners = true;
-            this.BTN_ImportSTAM.BorderRadius = 13;
-            this.BTN_ImportSTAM.CheckedState.Parent = this.BTN_ImportSTAM;
-            this.BTN_ImportSTAM.CustomImages.Parent = this.BTN_ImportSTAM;
-            this.BTN_ImportSTAM.DisabledState.Parent = this.BTN_ImportSTAM;
-            this.BTN_ImportSTAM.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(69)))));
-            this.BTN_ImportSTAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_ImportSTAM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BTN_ImportSTAM.HoverState.Parent = this.BTN_ImportSTAM;
-            this.BTN_ImportSTAM.Location = new System.Drawing.Point(114, 275);
-            this.BTN_ImportSTAM.Name = "BTN_ImportSTAM";
-            this.BTN_ImportSTAM.ShadowDecoration.Parent = this.BTN_ImportSTAM;
-            this.BTN_ImportSTAM.Size = new System.Drawing.Size(86, 29);
-            this.BTN_ImportSTAM.TabIndex = 23;
-            this.BTN_ImportSTAM.Text = "Import";
+            this.CB_STAM.Visible = false;
             // 
             // BTN_ExportSTAM
             // 
@@ -277,20 +269,6 @@
             this.LBL_Titlebar.Text = "SONGGARDE";
             this.LBL_Titlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
             // 
-            // PB_Icon
-            // 
-            this.PB_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Icon.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE;
-            this.PB_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PB_Icon.Location = new System.Drawing.Point(2, 2);
-            this.PB_Icon.Margin = new System.Windows.Forms.Padding(10);
-            this.PB_Icon.Name = "PB_Icon";
-            this.PB_Icon.Padding = new System.Windows.Forms.Padding(10);
-            this.PB_Icon.Size = new System.Drawing.Size(30, 30);
-            this.PB_Icon.TabIndex = 32;
-            this.PB_Icon.TabStop = false;
-            this.PB_Icon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
-            // 
             // BTN_Close
             // 
             this.BTN_Close.Animated = true;
@@ -314,58 +292,9 @@
             this.BTN_Close.UseTransparentBackground = true;
             this.BTN_Close.Click += new System.EventHandler(this.BTN_Close_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_SchwungObenLang;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(190, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(475, 34);
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
-            // 
             // FRM_Shadow
             // 
             this.FRM_Shadow.TargetForm = this;
-            // 
-            // PB_Play
-            // 
-            this.PB_Play.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Play.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PB_Play.BackgroundImage")));
-            this.PB_Play.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PB_Play.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_Play.Location = new System.Drawing.Point(469, 256);
-            this.PB_Play.Margin = new System.Windows.Forms.Padding(23, 20, 23, 20);
-            this.PB_Play.Name = "PB_Play";
-            this.PB_Play.Padding = new System.Windows.Forms.Padding(23, 20, 23, 20);
-            this.PB_Play.Size = new System.Drawing.Size(113, 58);
-            this.PB_Play.TabIndex = 4;
-            this.PB_Play.TabStop = false;
-            this.PB_Play.Visible = false;
-            this.PB_Play.Click += new System.EventHandler(this.PB_Play_Click);
-            // 
-            // PB_Preview
-            // 
-            this.PB_Preview.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Preview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PB_Preview.Location = new System.Drawing.Point(409, 230);
-            this.PB_Preview.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.PB_Preview.Name = "PB_Preview";
-            this.PB_Preview.Padding = new System.Windows.Forms.Padding(23, 20, 23, 20);
-            this.PB_Preview.Size = new System.Drawing.Size(224, 116);
-            this.PB_Preview.TabIndex = 2;
-            this.PB_Preview.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_Schwung;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 310);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(337, 81);
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
             // 
             // CMS_Main
             // 
@@ -377,7 +306,7 @@
             this.exitToolStripMenuItem,
             this.debugToolStripMenuItem});
             this.CMS_Main.Name = "CMS_Main";
-            this.CMS_Main.Size = new System.Drawing.Size(183, 142);
+            this.CMS_Main.Size = new System.Drawing.Size(183, 120);
             // 
             // changelogToolStripMenuItem
             // 
@@ -410,14 +339,20 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // LBL_Notifications
+            // debugToolStripMenuItem
             // 
-            this.LBL_Notifications.AutoSize = true;
-            this.LBL_Notifications.Location = new System.Drawing.Point(343, 373);
-            this.LBL_Notifications.Name = "LBL_Notifications";
-            this.LBL_Notifications.Size = new System.Drawing.Size(86, 13);
-            this.LBL_Notifications.TabIndex = 33;
-            this.LBL_Notifications.Text = "PLACEHOLDER";
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setupFormToolStripMenuItem});
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // setupFormToolStripMenuItem
+            // 
+            this.setupFormToolStripMenuItem.Name = "setupFormToolStripMenuItem";
+            this.setupFormToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.setupFormToolStripMenuItem.Text = "Setup Form";
+            this.setupFormToolStripMenuItem.Click += new System.EventHandler(this.setupFormToolStripMenuItem_Click);
             // 
             // LBL_TitleMusic
             // 
@@ -425,7 +360,7 @@
             this.LBL_TitleMusic.AutoSize = true;
             this.LBL_TitleMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.LBL_TitleMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_TitleMusic.Location = new System.Drawing.Point(187, 161);
+            this.LBL_TitleMusic.Location = new System.Drawing.Point(259, 160);
             this.LBL_TitleMusic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBL_TitleMusic.Name = "LBL_TitleMusic";
             this.LBL_TitleMusic.Size = new System.Drawing.Size(86, 13);
@@ -444,7 +379,7 @@
             this.LBL_Backgroundimage.AutoSize = true;
             this.LBL_Backgroundimage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.LBL_Backgroundimage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Backgroundimage.Location = new System.Drawing.Point(187, 105);
+            this.LBL_Backgroundimage.Location = new System.Drawing.Point(259, 104);
             this.LBL_Backgroundimage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBL_Backgroundimage.Name = "LBL_Backgroundimage";
             this.LBL_Backgroundimage.Size = new System.Drawing.Size(86, 13);
@@ -466,36 +401,240 @@
             this.panel1.Size = new System.Drawing.Size(665, 10);
             this.panel1.TabIndex = 35;
             // 
-            // debugToolStripMenuItem
+            // chkFog
             // 
-            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setupFormToolStripMenuItem});
-            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            this.debugToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.debugToolStripMenuItem.Text = "Debug";
+            this.chkFog.Animated = true;
+            this.chkFog.AutoSize = true;
+            this.chkFog.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkFog.CheckedState.BorderRadius = 0;
+            this.chkFog.CheckedState.BorderThickness = 0;
+            this.chkFog.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkFog.Location = new System.Drawing.Point(22, 196);
+            this.chkFog.Name = "chkFog";
+            this.chkFog.Size = new System.Drawing.Size(80, 17);
+            this.chkFog.TabIndex = 36;
+            this.chkFog.Text = "Enable Fog";
+            this.chkFog.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkFog.UncheckedState.BorderRadius = 0;
+            this.chkFog.UncheckedState.BorderThickness = 0;
+            this.chkFog.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkFog.CheckedChanged += new System.EventHandler(this.chkFog_CheckedChanged);
             // 
-            // setupFormToolStripMenuItem
+            // chkSkyrimLogo
             // 
-            this.setupFormToolStripMenuItem.Name = "setupFormToolStripMenuItem";
-            this.setupFormToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.setupFormToolStripMenuItem.Text = "Setup Form";
-            this.setupFormToolStripMenuItem.Click += new System.EventHandler(this.setupFormToolStripMenuItem_Click);
+            this.chkSkyrimLogo.Animated = true;
+            this.chkSkyrimLogo.AutoSize = true;
+            this.chkSkyrimLogo.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkSkyrimLogo.CheckedState.BorderRadius = 0;
+            this.chkSkyrimLogo.CheckedState.BorderThickness = 0;
+            this.chkSkyrimLogo.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkSkyrimLogo.Location = new System.Drawing.Point(22, 230);
+            this.chkSkyrimLogo.Name = "chkSkyrimLogo";
+            this.chkSkyrimLogo.Size = new System.Drawing.Size(120, 17);
+            this.chkSkyrimLogo.TabIndex = 37;
+            this.chkSkyrimLogo.Text = "Enable Skyrim Logo";
+            this.chkSkyrimLogo.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSkyrimLogo.UncheckedState.BorderRadius = 0;
+            this.chkSkyrimLogo.UncheckedState.BorderThickness = 0;
+            this.chkSkyrimLogo.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSkyrimLogo.CheckedChanged += new System.EventHandler(this.chkSkyrimLogo_CheckedChanged);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.AutoRoundedCorners = true;
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 13;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(22, 357);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(308, 29);
+            this.guna2Button2.TabIndex = 38;
+            this.guna2Button2.Text = "Disable Replacers";
+            this.guna2Button2.UseTransparentBackground = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.tbNotifications);
+            this.panel2.Location = new System.Drawing.Point(0, 390);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(665, 62);
+            this.panel2.TabIndex = 39;
+            // 
+            // tbNotifications
+            // 
+            this.tbNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbNotifications.Location = new System.Drawing.Point(0, 0);
+            this.tbNotifications.Multiline = true;
+            this.tbNotifications.Name = "tbNotifications";
+            this.tbNotifications.ReadOnly = true;
+            this.tbNotifications.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbNotifications.Size = new System.Drawing.Size(665, 62);
+            this.tbNotifications.TabIndex = 0;
+            // 
+            // btnRemoveMusic
+            // 
+            this.btnRemoveMusic.Animated = true;
+            this.btnRemoveMusic.AutoRoundedCorners = true;
+            this.btnRemoveMusic.BorderRadius = 13;
+            this.btnRemoveMusic.CheckedState.Parent = this.btnRemoveMusic;
+            this.btnRemoveMusic.CustomImages.Parent = this.btnRemoveMusic;
+            this.btnRemoveMusic.DisabledState.Parent = this.btnRemoveMusic;
+            this.btnRemoveMusic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRemoveMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveMusic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnRemoveMusic.HoverState.Parent = this.btnRemoveMusic;
+            this.btnRemoveMusic.Location = new System.Drawing.Point(172, 152);
+            this.btnRemoveMusic.Name = "btnRemoveMusic";
+            this.btnRemoveMusic.ShadowDecoration.Parent = this.btnRemoveMusic;
+            this.btnRemoveMusic.Size = new System.Drawing.Size(79, 29);
+            this.btnRemoveMusic.TabIndex = 41;
+            this.btnRemoveMusic.Text = "Remove";
+            this.btnRemoveMusic.Click += new System.EventHandler(this.btnRemoveMusic_Click);
+            // 
+            // btnRemoveImage
+            // 
+            this.btnRemoveImage.Animated = true;
+            this.btnRemoveImage.AutoRoundedCorners = true;
+            this.btnRemoveImage.BorderRadius = 13;
+            this.btnRemoveImage.CheckedState.Parent = this.btnRemoveImage;
+            this.btnRemoveImage.CustomImages.Parent = this.btnRemoveImage;
+            this.btnRemoveImage.DisabledState.Parent = this.btnRemoveImage;
+            this.btnRemoveImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRemoveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnRemoveImage.HoverState.Parent = this.btnRemoveImage;
+            this.btnRemoveImage.Location = new System.Drawing.Point(172, 96);
+            this.btnRemoveImage.Name = "btnRemoveImage";
+            this.btnRemoveImage.ShadowDecoration.Parent = this.btnRemoveImage;
+            this.btnRemoveImage.Size = new System.Drawing.Size(79, 29);
+            this.btnRemoveImage.TabIndex = 40;
+            this.btnRemoveImage.Text = "Remove";
+            this.btnRemoveImage.Click += new System.EventHandler(this.btnRemoveImage_Click);
+            // 
+            // pbFog
+            // 
+            this.pbFog.BackColor = System.Drawing.Color.Transparent;
+            this.pbFog.Image = global::SONGGARDE.Properties.Resources.fog;
+            this.pbFog.ImageRotate = 0F;
+            this.pbFog.Location = new System.Drawing.Point(409, 234);
+            this.pbFog.Name = "pbFog";
+            this.pbFog.ShadowDecoration.Parent = this.pbFog;
+            this.pbFog.Size = new System.Drawing.Size(224, 140);
+            this.pbFog.TabIndex = 43;
+            this.pbFog.TabStop = false;
+            this.pbFog.UseTransparentBackground = true;
+            this.pbFog.Visible = false;
+            // 
+            // pbSkyrimLogo
+            // 
+            this.pbSkyrimLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbSkyrimLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbSkyrimLogo.Image = global::SONGGARDE.Properties.Resources.SkyrimSymbol;
+            this.pbSkyrimLogo.ImageRotate = 0F;
+            this.pbSkyrimLogo.Location = new System.Drawing.Point(460, 244);
+            this.pbSkyrimLogo.Name = "pbSkyrimLogo";
+            this.pbSkyrimLogo.ShadowDecoration.Parent = this.pbSkyrimLogo;
+            this.pbSkyrimLogo.Size = new System.Drawing.Size(66, 83);
+            this.pbSkyrimLogo.TabIndex = 42;
+            this.pbSkyrimLogo.TabStop = false;
+            this.pbSkyrimLogo.UseTransparentBackground = true;
+            this.pbSkyrimLogo.Visible = false;
+            // 
+            // PB_Icon
+            // 
+            this.PB_Icon.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Icon.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE;
+            this.PB_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Icon.Location = new System.Drawing.Point(2, 2);
+            this.PB_Icon.Margin = new System.Windows.Forms.Padding(10);
+            this.PB_Icon.Name = "PB_Icon";
+            this.PB_Icon.Padding = new System.Windows.Forms.Padding(10);
+            this.PB_Icon.Size = new System.Drawing.Size(30, 30);
+            this.PB_Icon.TabIndex = 32;
+            this.PB_Icon.TabStop = false;
+            this.PB_Icon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_SchwungObenLang;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(190, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(475, 34);
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PNL_TopWindow_MouseMove);
+            // 
+            // PB_Play
+            // 
+            this.PB_Play.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Play.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PB_Play.BackgroundImage")));
+            this.PB_Play.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Play.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_Play.Location = new System.Drawing.Point(469, 256);
+            this.PB_Play.Margin = new System.Windows.Forms.Padding(23, 20, 23, 20);
+            this.PB_Play.Name = "PB_Play";
+            this.PB_Play.Padding = new System.Windows.Forms.Padding(23, 20, 23, 20);
+            this.PB_Play.Size = new System.Drawing.Size(113, 58);
+            this.PB_Play.TabIndex = 4;
+            this.PB_Play.TabStop = false;
+            this.PB_Play.Visible = false;
+            this.PB_Play.Click += new System.EventHandler(this.PB_Play_Click);
+            // 
+            // PB_Preview
+            // 
+            this.PB_Preview.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Preview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_Preview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Preview.Location = new System.Drawing.Point(409, 230);
+            this.PB_Preview.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PB_Preview.Name = "PB_Preview";
+            this.PB_Preview.Padding = new System.Windows.Forms.Padding(23, 20, 23, 20);
+            this.PB_Preview.Size = new System.Drawing.Size(224, 116);
+            this.PB_Preview.TabIndex = 2;
+            this.PB_Preview.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SONGGARDE.Properties.Resources.SONGGARDE_Image_Schwung;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 310);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 81);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // FRM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(665, 390);
+            this.ClientSize = new System.Drawing.Size(665, 452);
             this.ContextMenuStrip = this.CMS_Main;
-            this.Controls.Add(this.LBL_Notifications);
+            this.Controls.Add(this.pbFog);
+            this.Controls.Add(this.pbSkyrimLogo);
+            this.Controls.Add(this.btnRemoveMusic);
+            this.Controls.Add(this.btnRemoveImage);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.chkSkyrimLogo);
+            this.Controls.Add(this.chkFog);
             this.Controls.Add(this.PNL_TopWindow);
             this.Controls.Add(this.TB_SkyrimPath);
             this.Controls.Add(this.BTN_ChangeDirectory);
             this.Controls.Add(this.BTN_ChangeTitleMusic);
             this.Controls.Add(this.BTN_ChangeBackgroundimage);
             this.Controls.Add(this.BTN_ExportSTAM);
-            this.Controls.Add(this.BTN_ImportSTAM);
             this.Controls.Add(this.CB_STAM);
             this.Controls.Add(this.LBL_Backgroundimage);
             this.Controls.Add(this.LBL_TitleMusic);
@@ -515,12 +654,16 @@
             this.Load += new System.EventHandler(this.FRM_Main_Load);
             this.PNL_TopWindow.ResumeLayout(false);
             this.PNL_TopWindow.PerformLayout();
+            this.CMS_Main.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkyrimLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.CMS_Main.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,7 +674,6 @@
         private System.Windows.Forms.Label LBL_Preview;
         private System.Windows.Forms.PictureBox PB_Play;
         private Guna.UI2.WinForms.Guna2ComboBox CB_STAM;
-        private Guna.UI2.WinForms.Guna2Button BTN_ImportSTAM;
         private Guna.UI2.WinForms.Guna2Button BTN_ExportSTAM;
         private Guna.UI2.WinForms.Guna2Button BTN_ChangeBackgroundimage;
         private Guna.UI2.WinForms.Guna2Button BTN_ChangeTitleMusic;
@@ -550,13 +692,21 @@
         private System.Windows.Forms.ToolStripMenuItem nexuswebsiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label LBL_Notifications;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label LBL_TitleMusic;
         private System.Windows.Forms.Label LBL_Backgroundimage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setupFormToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2CheckBox chkSkyrimLogo;
+        private Guna.UI2.WinForms.Guna2CheckBox chkFog;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button btnRemoveMusic;
+        private Guna.UI2.WinForms.Guna2Button btnRemoveImage;
+        public System.Windows.Forms.TextBox tbNotifications;
+        private Guna.UI2.WinForms.Guna2PictureBox pbSkyrimLogo;
+        private Guna.UI2.WinForms.Guna2PictureBox pbFog;
     }
 }
 
