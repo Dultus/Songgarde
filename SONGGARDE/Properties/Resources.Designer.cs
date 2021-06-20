@@ -63,6 +63,16 @@ namespace SONGGARDE.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ClosedAlpha {
+            get {
+                object obj = ResourceManager.GetObject("ClosedAlpha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fog {
             get {
                 object obj = ResourceManager.GetObject("fog", resourceCulture);

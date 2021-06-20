@@ -26,7 +26,7 @@ namespace SONGGARDE
         public static bool bNoReminder = false;
         public static bool bCloseAfterYes;
 
-        private string sVersion = "0.0.1";
+        private string sVersion = "1.0.0";
         private string sOnlineVersion;
         public menureplacer bannerinstallmode = 0;
         public string sOrigBGImagePath, sOrigTitleMusicPath, sExtension;

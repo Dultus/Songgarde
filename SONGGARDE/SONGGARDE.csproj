@@ -156,6 +156,7 @@
     <None Include="Resources\SONGGARDE Image SchwungObenLang.png" />
     <None Include="Resources\SONGGARDE.png" />
     <None Include="Resources\fog.png" />
+    <None Include="Resources\ClosedAlpha.png" />
     <Content Include="STAM-C.ico" />
     <Content Include="STAMC.ico" />
   </ItemGroup>

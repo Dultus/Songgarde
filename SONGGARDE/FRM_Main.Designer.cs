@@ -67,6 +67,7 @@
             this.PB_Play = new System.Windows.Forms.PictureBox();
             this.PB_Preview = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PNL_TopWindow.SuspendLayout();
             this.CMS_Main.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // LBL_Preview
@@ -614,6 +616,16 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::SONGGARDE.Properties.Resources.ClosedAlpha;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(137, 138);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(242, 208);
+            this.pictureBox3.TabIndex = 44;
+            this.pictureBox3.TabStop = false;
+            // 
             // FRM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,6 +655,7 @@
             this.Controls.Add(this.PB_Preview);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -664,6 +677,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Preview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,6 +721,7 @@
         public System.Windows.Forms.TextBox tbNotifications;
         private Guna.UI2.WinForms.Guna2PictureBox pbSkyrimLogo;
         private Guna.UI2.WinForms.Guna2PictureBox pbFog;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
